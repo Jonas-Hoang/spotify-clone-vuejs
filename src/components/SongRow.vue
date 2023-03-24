@@ -50,13 +50,15 @@ onMounted(() => {
       </div>
 
       <div v-else class="text-white font-semibold w-[40px] ml-5">
-        <span>
+        <span :class="{'text-green-500': currentTrack && currentTrack.name === track.name}">
           {{ index }}
         </span>
       </div>
 
       <div>
-        <div class="text-white font-semibold">
+        <div
+        :class="{'text-green-500': currentTrack && currentTrack.name === track.name}"
+         class="text-white font-semibold">
           {{ track.name }}
         </div>
 

@@ -50,9 +50,10 @@ onMounted(() => {
       const clickPosition =
         (e.pageX - seekerContainer.value.offsetLeft) /
         seekerContainer.value.offsetWitdh;
-        const time = audio.value.duration * clickPosition
-        audio.value.currentTime = time;
-        seeker.value.value = (100 / audio.value.duration) * audio.value.currentTime;
+      const time = audio.value.duration * clickPosition;
+      audio.value.currentTime = time;
+      seeker.value.value =
+        (100 / audio.value.duration) * audio.value.currentTime;
     });
   }
 });
@@ -99,9 +100,31 @@ watch(
 
 <template>
   <div
-  id="MusicPlayer" 
-  class="flex fixed justify-between items-center bottom-0 w-full z-50 h-[50px] bg-[#181818] border-t border-t-[#272727]"
+    id="MusicPlayer"
+    class="flex fixed justify-between items-center bottom-0 w-full z-50 h-[70px] bg-[#181818] border-t border-t-[#272727]"
   >
-  Alo
+    <div class="flex items-center w-1/4">
+      <div class="flex items-center ml-4">
+        <img
+          class="rounded-sm shadow-2xl"
+          width="55"
+          :src="currentArtist.albumCover"
+        />
+        <div class="ml-4">
+          <div class="text-[14px] text-white hover:underline cursor-pointer">
+            {{ currentTrack.name }}
+          </div>
+          <div
+            class="text-[11px] text-gray-400 hover:text-white cursor-pointer"
+          >
+            {{ currentArtist.name }}
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center ml-8">
+        <Heart fillColor="#1BD760" :size="20" />
+      </div>
+    </div>
   </div>
 </template>
