@@ -18,6 +18,7 @@ let icon = ref(null);
 let textIsHover = ref(false);
 
 watchEffect(() => {
+  
   if (route.path == pageUrl.value) {
     icon.value = iconString.value + "-active";
     textIsHover.value = true;
