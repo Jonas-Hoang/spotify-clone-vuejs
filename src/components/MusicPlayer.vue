@@ -12,6 +12,8 @@ import { useSongStore } from "../stores/song.js";
 
 import { storeToRefs } from "pinia";
 
+import artist from "../artist.json";
+
 const useSong = useSongStore();
 
 const { isPlaying, audio, currentTrack, currentArtist } = storeToRefs(useSong);
@@ -108,6 +110,7 @@ watch(
         <img
           class="rounded-sm shadow-2xl"
           width="55"
+          height="55"
           :src="currentArtist.albumCover"
         />
         <div class="ml-4">

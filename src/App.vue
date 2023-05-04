@@ -10,7 +10,7 @@ import ChevronDown from "vue-material-design-icons/ChevronDown.vue";
 import ChevronRight from "vue-material-design-icons/ChevronRight.vue";
 import ChevronLeft from "vue-material-design-icons/ChevronLeft.vue";
 
-let openMenu = ref(false); 
+let openMenu = ref(false);
 </script>
 
 <template>
@@ -161,8 +161,6 @@ let openMenu = ref(false);
     <div class="mt-[70px]"></div>
     <router-view></router-view>
     <div class="mt-[100px]"></div>
+    <MusicPlayer />
   </div>
-
-  <MusicPlayer />
 </template>
- 

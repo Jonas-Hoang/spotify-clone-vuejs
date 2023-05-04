@@ -1,7 +1,6 @@
 <script setup>
 import SongRow from "../components/SongRow.vue";
 
-
 import Play from "vue-material-design-icons/Play.vue";
 import Pause from "vue-material-design-icons/Pause.vue";
 import Heart from "vue-material-design-icons/Heart.vue";
@@ -18,13 +17,13 @@ const useSong = useSongStore();
 
 const { isPlaying, audio, currentTrack, currentArtist } = storeToRefs(useSong);
 
-const playingFunc = () =>{
-  if(currentTrack.value){
-    useSong.playOrPauseThisSong(currentArtist.value, currentTrack.value)
-    return
+const playingFunc = () => {
+  if (currentTrack.value) {
+    useSong.playOrPauseThisSong(currentArtist.value, currentTrack.value);
+    return;
   }
-  useSong.playFromFirst()
-}
+  useSong.playFromFirst();
+};
 </script>
 
 <template>
@@ -68,7 +67,11 @@ const playingFunc = () =>{
           <div
             class="absolute flex gap-4 items-center justify-start bottom-0 mb-1.5"
           >
-            <button type="button" class="p-1 rounded-full bg-white" @click="playingFunc">
+            <button
+              type="button"
+              class="p-1 rounded-full bg-white"
+              @click="playingFunc"
+            >
               <Play v-if="!isPlaying" fillColor="#181818" :size="25" />
               <Pause v-else fillColor="#181818" :size="25" />
             </button>
@@ -101,7 +104,7 @@ const playingFunc = () =>{
       v-for="(track, index) in artist.tracks"
       :key="index"
     >
-   <SongRow :artist="artist" :track="track" :index="++index"/>
+      <SongRow :artist="artist" :track="track" :index="++index" />
     </ul>
   </div>
 </template>
