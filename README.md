@@ -1,5 +1,8 @@
 # spotify-clone
 
+![image](https://github.com/Jonas-Hoang/spotify-clone-vuejs/assets/66858257/c9761985-1810-4965-880b-1a67f241f2c7)
+
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
