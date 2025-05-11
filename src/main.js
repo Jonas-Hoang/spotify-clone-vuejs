@@ -8,12 +8,14 @@ import './assets/main.css'
 
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
-const pinia = createPinia()
-pinia.use(piniaPluginPersistedstate)
+import Tres from "@tresjs/core";
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(pinia)
-app.use(router)
+app.use(pinia);
+app.use(router);
+app.use(Tres);
 
-app.mount('#app')
+app.mount("#app");

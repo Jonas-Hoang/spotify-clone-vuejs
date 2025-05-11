@@ -11,17 +11,14 @@ const props = defineProps({
 });
 
 const { image, title, subTitle } = toRefs(props);
-
 </script>
 
 <template>
   <router-link to="/">
-    <div
-      class="bg-[#111111] p-4 rounded-md m-2 hover:bg-[#252525] cursor-pointer"
-    >
+    <div class="bg-[#111111] p-4 rounded-md m-2 hover:bg-[#252525] cursor-pointer">
       <img class="rounded-md" :src="image" alt="" />
-      <div class="text-white pt-4 font-semibold text-[17px]">{{ title }}</div>
-      <div class="text-gray-400 pt-1 pb-3 text-[14px]">
+      <div class="text-white pt-4 font-semibold text-[17px] whitespace-nowrap overflow-hidden text-ellipsis max-w-[139px]">{{ title }}</div>
+      <div class="text-gray-400 pt-1 pb-3 text-[14px] whitespace-nowrap overflow-hidden text-ellipsis max-w-[139px]">
         {{ subTitle }}
       </div>
     </div>
