@@ -1,13 +1,23 @@
 <script setup>
 import CategorySelect from "../components/CategorySelect.vue";
+import { TresCanvas } from "@tresjs/core";
+import { ContactShadows, Levioso, TorusKnot, MouseParallax } from "@tresjs/cientos";
 </script>
 
 <template>
+  <div class="block h-[200px]">
+    <TresCanvas clear-color="#000">
+      <Levioso :speed="2" :range="[0, 0.7]" :rotation-factor="15">
+        <TorusKnot :scale="1.2">
+          <TresMeshNormalMaterial />
+        </TorusKnot>
+      </Levioso>
+      <ContactShadows :position-y="-1" color="#335" :scale="20" />
+      <MouseParallax :factor="5" :ease="[3, 0.1]" />
+    </TresCanvas>
+  </div>
   <div class="p-8">
-    <button
-      type="button"
-      class="text-white text-2xl font-semibold hover:underline cursor-pointer"
-    >
+    <button type="button" class="text-white text-2xl font-semibold hover:underline cursor-pointer">
       Recommend Songs
     </button>
     <div class="py-1.5"></div>

@@ -28,50 +28,30 @@ const playingFunc = () => {
 
 <template>
   <div class="p-8">
-    <button
-      type="button"
-      class="text-white text-2xl font-semibold hover:underline cursor-pointer"
-    >
+    <button type="button" class="text-white text-2xl font-semibold hover:underline cursor-pointer">
       {{ artist.name }}
     </button>
     <div class="py-1.5"></div>
 
     <div class="flex items-center w-full relative h-full">
-      <img
-        class="h-[140px] object-cover"
-        width="140"
-        :src="artist.albumCover"
-      />
+      <img class="h-[140px] object-cover" width="140" :src="artist.albumCover" />
 
       <div class="w-full ml-5">
-        <div
-          class="text-white absolute w-full hover:underline cursor-pointer top-0 font-semibold"
-          style="font-size: 33px"
-        >
+        <div class="text-white absolute w-full hover:underline cursor-pointer top-0 font-semibold" style="font-size: 33px">
           {{ artist.name }}
         </div>
         <div class="text-gray-300 text-[13px] flex">
           <div class="flex cursor-pointer">Album</div>
           <div class="ml-2 flex cursor-pointer">
-            <div
-              class="w-[4px] h-[4px] bg-slate-300 rounded-full mt-2 mr-2"
-            ></div>
+            <div class="w-[4px] h-[4px] bg-slate-300 rounded-full mt-2 mr-2"></div>
             <span class="-ml-0.5">{{ artist.releaseYear }}</span>
           </div>
           <div class="ml-2 flex cursor-pointer">
-            <div
-              class="w-[4px] h-[4px] bg-slate-300 rounded-full mt-2 mr-2"
-            ></div>
+            <div class="w-[4px] h-[4px] bg-slate-300 rounded-full mt-2 mr-2"></div>
             <span class="-ml-0.5">{{ artist.tracks.length }} songs</span>
           </div>
-          <div
-            class="absolute flex gap-4 items-center justify-start bottom-0 mb-1.5"
-          >
-            <button
-              type="button"
-              class="p-1 rounded-full bg-white"
-              @click="playingFunc"
-            >
+          <div class="absolute flex gap-4 items-center justify-start bottom-0 mb-1.5">
+            <button type="button" class="p-1 rounded-full bg-white" @click="playingFunc">
               <Play v-if="!isPlaying" fillColor="#181818" :size="25" />
               <Pause v-else fillColor="#181818" :size="25" />
             </button>
@@ -99,11 +79,7 @@ const playingFunc = () => {
     <div class="border-b border-b-[#2A2a2a] mt-2"></div>
     <div class="mb-4"></div>
 
-    <ul
-      class="w-full text-white"
-      v-for="(track, index) in artist.tracks"
-      :key="index"
-    >
+    <ul class="w-full text-white" v-for="(track, index) in artist.tracks" :key="index">
       <SongRow :artist="artist" :track="track" :index="++index" />
     </ul>
   </div>

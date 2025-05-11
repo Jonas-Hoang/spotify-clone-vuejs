@@ -1,13 +1,13 @@
 <script setup>
 import HomeCard from "../components/HomeCard.vue";
+import StereoCassetse from "../components/SteroCassete.vue";
 import { TresCanvas } from "@tresjs/core";
-import { Box, OrbitControls, Text3D } from "@tresjs/cientos";
+import { Box, OrbitControls } from "@tresjs/cientos";
 </script>
 
 <template>
   <div class="block h-[200px]">
     <TresCanvas clear-color="#000">
-      <Text3D text="Spotify" font="/fonts/FiraCodeRegular.json" center need-updates />
       <TresPerspectiveCamera :position="[3, 3, 3]" />
       <OrbitControls />
       <Box :scale="2">
@@ -15,9 +15,9 @@ import { Box, OrbitControls, Text3D } from "@tresjs/cientos";
       </Box>
       <TresAmbientLight />
       <TresDirectionalLight :position="[0, 2, 4]" />
-      <!-- <TresGridHelper /> -->
     </TresCanvas>
   </div>
+
   <div class="p-8">
     <button type="button" class="text-white text-2xl font-semibold hover:underline cursor-pointer">
       Podcasts to make you smarter
