@@ -1,0 +1,61 @@
+$l: 2.5em;
+$c: #1ED760;
+$n: 20;
+@function pow($base, $exponents) {
+    $raised: 1;
+    @for $i from 1 through $exponents {
+        $raised: $raised * $base;
+    }
+    @return $raised;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+    perspective: 20em;
+    font-size: 5vmin;
+}
+
+div {
+    position: absolute;
+}
+
+.assembly {
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    animation: r 16s linear infinite;
+}
+
+@keyframes r {
+    to {
+        transform: rotateY(1turn);
+    }
+}
+
+.cube {
+    transform-style: preserve-3d;
+    @for $i from 0 to $n {
+        $x: (-3.25 + 0.1 * random(65)) * $l;
+        $y: (-3.25 + 0.1 * random(65)) * $l;
+        $z: (-3.25 + 0.1 * random(65)) * $l;
+        $f: (0.5 + 0.1 * random(20));
+        &:nth-child(#{$i + 1}) {
+            transform: translate3d($x, $y, $z) scale3d($f, $f, $f);
+        }
+    }
+    &__face {
+        margin: -0.5 * $l;
+        width: $l;
+        height: $l;
+        opacity: 0.5;
+        box-shadow: inset 0 0 1px;
+        background: radial-gradient(mix(#fff, $c), $c);
+        @for $i from 0 to 6 {
+            &:nth-child(#{$i + 1}) {
+                transform: if($i < 4, rotateY($i * 90deg), rotateX(pow(-1, $i) * 90deg)) translateZ(0.5 * $l);
+            }
+        }
+    }
+}

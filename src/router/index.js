@@ -1,28 +1,34 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 // @ts-ignore
-import HomeView from '../views/HomeView.vue';
+import HomeView from "../views/HomeView.vue";
 // @ts-ignore
-import SearchView from '../views/SeachView.vue'
+import SearchView from "../views/SeachView.vue";
 // @ts-ignore
-import LibraryView from '../views/LibraryView.vue'
+import LibraryView from "../views/LibraryView.vue";
+// @ts-ignore
+import CreatePlaylist from "../views/CreateView.vue";
 
 const router = createRouter({
-  // @ts-ignore
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      component: HomeView
-    },
-    {
-      path: '/search',
-      component: SearchView
-    },
-    {
-      path: '/library',
-      component: LibraryView
-    }
-  ]
-})
+    // @ts-ignore
+    history: createWebHistory(
+        import.meta.env.BASE_URL),
+    routes: [{
+            path: "/",
+            component: HomeView,
+        },
+        {
+            path: "/search",
+            component: SearchView,
+        },
+        {
+            path: "/library",
+            component: LibraryView,
+        },
+        {
+            path: "/create",
+            component: CreatePlaylist,
+        },
+    ],
+});
 
-export default router
+export default router;

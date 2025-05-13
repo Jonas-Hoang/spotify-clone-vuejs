@@ -64,7 +64,10 @@ let openMenu = ref(false);
         </router-link>
 
         <div class="py-3.5"></div>
-        <MenuItem class="ml-[1px]" :iconSize="23" name="Create Playlist" iconString="playlist" pageUrl="/liked" />
+        <router-link to="/create">
+          <MenuItem class="ml-[1px]" :iconSize="23" name="Create Playlist" iconString="playlist" pageUrl="/liked" />
+        </router-link>
+
         <MenuItem class="ml-[1px]" :iconSize="23" name="Liked Songs" iconString="liked" pageUrl="/liked" />
       </ul>
 

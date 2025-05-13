@@ -86,7 +86,7 @@ const playingFunc = () => {
 </template>
 
 
-<style scoped>
+<style lang="scss" scoped>
 .circle {
   width: 4px;
   height: 4px;
