@@ -1,11 +1,41 @@
 <script setup>
 import CategorySelect from "../components/CategorySelect.vue";
 import { TresCanvas } from "@tresjs/core";
-import { ContactShadows, Levioso, TorusKnot, MouseParallax } from "@tresjs/cientos";
+import {
+  ContactShadows,
+  Levioso,
+  TorusKnot,
+  MouseParallax,
+} from "@tresjs/cientos";
+
+const categories = [
+  { name: "Postcast", id: 23 },
+  { name: "List Events", id: 24 },
+  { name: "Made For You", id: 25 },
+  { name: "New Releases", id: 26 },
+  { name: "US-UK Hits", id: 27 },
+  { name: "K-Pop Rising", id: 28 },
+  { name: "Charts", id: 29 },
+  { name: "Indie", id: 30 },
+  { name: "Trending", id: 31 },
+  { name: "Love", id: 32 },
+  { name: "Discover", id: 33 },
+  { name: "Love", id: 34 },
+  { name: "Mood", id: 35 },
+  { name: "Decades", id: 36 },
+  { name: "Party", id: 38 },
+  { name: "Devotional", id: 39 },
+  { name: "Gaming", id: 40 },
+  { name: "Chill", id: 41 },
+  { name: "Work out", id: 42 },
+  { name: "Rock", id: 44 },
+  { name: "Sleep", id: 43 },
+  { name: "Fresh Finds", id: 45 },
+];
 </script>
 
 <template>
-  <div class="block h-[200px]">
+  <div class="block h-[400px]">
     <TresCanvas clear-color="#000">
       <Levioso :speed="2" :range="[0, 0.7]" :rotation-factor="15">
         <TorusKnot :scale="1.2">
@@ -23,28 +53,7 @@ import { ContactShadows, Levioso, TorusKnot, MouseParallax } from "@tresjs/cient
     <div class="py-1.5"></div>
 
     <div class="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6">
-      <CategorySelect category="Postcast" image="http://picsum.photos/id/23/300/300" />
-      <CategorySelect category="List Events" image="http://picsum.photos/id/24/300/300" />
-      <CategorySelect category="Made For You" image="http://picsum.photos/id/25/300/300" />
-      <CategorySelect category="New Releases" image="http://picsum.photos/id/26/300/300" />
-      <CategorySelect category="US-UK Hits" image="http://picsum.photos/id/27/300/300" />
-      <CategorySelect category="K-Pop Rising" image="http://picsum.photos/id/28/300/300" />
-      <CategorySelect category="Charts" image="http://picsum.photos/id/29/300/300" />
-      <CategorySelect category="Indie" image="http://picsum.photos/id/30/300/300" />
-      <CategorySelect category="Trending" image="http://picsum.photos/id/31/300/300" />
-      <CategorySelect category="Love" image="http://picsum.photos/id/32/300/300" />
-      <CategorySelect category="Discover" image="http://picsum.photos/id/33/300/300" />
-      <CategorySelect category="Love" image="http://picsum.photos/id/34/300/300" />
-      <CategorySelect category="Mood" image="http://picsum.photos/id/35/300/300" />
-      <CategorySelect category="Decades" image="http://picsum.photos/id/36/300/300" />
-      <CategorySelect category="Party" image="http://picsum.photos/id/38/300/300" />
-      <CategorySelect category="Devotional" image="http://picsum.photos/id/39/300/300" />
-      <CategorySelect category="Gaming" image="http://picsum.photos/id/40/300/300" />
-      <CategorySelect category="Chill" image="http://picsum.photos/id/41/300/300" />
-      <CategorySelect category="Work out" image="http://picsum.photos/id/42/300/300" />
-      <CategorySelect category="Rock" image="http://picsum.photos/id/44/300/300" />
-      <CategorySelect category="Sleep" image="http://picsum.photos/id/43/300/300" />
-      <CategorySelect category="Fresh Finds" image="http://picsum.photos/id/45/300/300" />
+      <CategorySelect v-for="category in categories" :key="category.id" :category="category.name" :image="`http://picsum.photos/id/${category.id}/300/300`" />
     </div>
   </div>
 </template>

@@ -7,6 +7,10 @@ import SearchView from "../views/SeachView.vue";
 import LibraryView from "../views/LibraryView.vue";
 // @ts-ignore
 import CreatePlaylist from "../views/CreateView.vue";
+// @ts-ignore
+import LikeSong from "../views/LikeSong.vue";
+// @ts-ignore
+import Playlist1 from "../views/Playlist1.vue";
 
 const router = createRouter({
     // @ts-ignore
@@ -27,6 +31,14 @@ const router = createRouter({
         {
             path: "/create",
             component: CreatePlaylist,
+        },
+        {
+            path: "/liked",
+            component: LikeSong,
+        },
+        {
+            path: "/pl1",
+            component: Playlist1,
         },
     ],
 });

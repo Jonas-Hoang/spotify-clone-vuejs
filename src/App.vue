@@ -62,20 +62,23 @@ let openMenu = ref(false);
         <router-link to="/library">
           <MenuItem class="ml-[1px]" :iconSize="23" name="Your Library" iconString="library" pageUrl="/library" />
         </router-link>
-
         <div class="py-3.5"></div>
         <router-link to="/create">
           <MenuItem class="ml-[1px]" :iconSize="23" name="Create Playlist" iconString="playlist" pageUrl="/liked" />
         </router-link>
+        <router-link to="/liked">
+          <MenuItem class="ml-[1px]" :iconSize="23" name="Liked Songs" iconString="liked" pageUrl="/liked" />
+        </router-link>
 
-        <MenuItem class="ml-[1px]" :iconSize="23" name="Liked Songs" iconString="liked" pageUrl="/liked" />
       </ul>
 
       <div class="border-b border-b-gray-700"></div>
       <ul>
-        <li class="font-semibold cursor-pointer text-[13px] mt-3 text-gray-300 hover:text-white">
-          My playlist #1
-        </li>
+        <router-link to="/pl1">
+          <li class="font-semibold cursor-pointer text-[13px] mt-3 text-gray-300 hover:text-white">
+            My playlist #1
+          </li>
+        </router-link>
         <li class="font-semibold cursor-pointer text-[13px] mt-3 text-gray-300 hover:text-white">
           My playlist #2
         </li>
