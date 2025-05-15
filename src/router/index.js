@@ -13,6 +13,8 @@ import LikeSong from "../views/LikeSong.vue";
 import Playlist1 from "../views/Playlist1.vue";
 // @ts-ignore
 import Playlist2 from "../views/Playlist2.vue";
+// @ts-ignore
+import Playlist3 from "../views/Playlist3.vue";
 
 const router = createRouter({
     // @ts-ignore
@@ -45,6 +47,10 @@ const router = createRouter({
         {
             path: "/pl2",
             component: Playlist2,
+        },
+        {
+            path: "/pl3",
+            component: Playlist3,
         },
     ],
 });

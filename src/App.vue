@@ -84,9 +84,11 @@ let openMenu = ref(false);
             My playlist #2
           </li>
         </router-link>
-        <li class="font-semibold cursor-pointer text-[13px] mt-3 text-gray-300 hover:text-white">
-          My playlist #3
-        </li>
+          <router-link to="/pl3">
+          <li class="font-semibold cursor-pointer text-[13px] mt-3 text-gray-300 hover:text-white">
+            My playlist #3
+          </li>
+        </router-link>
         <li class="font-semibold cursor-pointer text-[13px] mt-3 text-gray-300 hover:text-white">
           My playlist #4
         </li>
