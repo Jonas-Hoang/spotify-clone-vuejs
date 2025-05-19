@@ -15,6 +15,8 @@ import Playlist1 from "../views/Playlist1.vue";
 import Playlist2 from "../views/Playlist2.vue";
 // @ts-ignore
 import Playlist3 from "../views/Playlist3.vue";
+// @ts-ignore
+import Playlist4 from "../views/Playlist4.vue";
 
 const router = createRouter({
     // @ts-ignore
@@ -51,6 +53,10 @@ const router = createRouter({
         {
             path: "/pl3",
             component: Playlist3,
+        },
+        {
+            path: "/pl4",
+            component: Playlist4,
         },
     ],
 });
