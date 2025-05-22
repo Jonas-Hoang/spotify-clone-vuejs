@@ -119,7 +119,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 onMounted(() => {
   // 1. Khởi tạo scene
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xf0f0f0); // Nền trắng như ảnh mẫu
+  scene.background = new THREE.Color(0x000000); 
 
   const camera = new THREE.PerspectiveCamera(
     50,
