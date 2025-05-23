@@ -49,7 +49,7 @@ let openMenu = ref(false);
     </div>
     <div id="sideNav" class="p-6 h-[100%] w-[240px] fixed z-50 bg-black">
       <router-link to="/">
-        <img width="125" src="../icons/spotify-logo.png" alt="" />
+        <img width="125" src="/icons/spotify-logo.png" alt="" />
       </router-link>
       <div class="my-8"></div>
       <ul>
