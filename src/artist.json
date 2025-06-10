@@ -2,8 +2,7 @@
     "name": "Lofi for STUDY 2023",
     "albumCover": "/images/albumCover/lofi-cover.jpeg",
     "releaseYear": "2023",
-    "tracks": [
-        {
+    "tracks": [{
             "id": 1,
             "name": "Intro",
             "path": "/songs/Intro.mp3"
@@ -57,6 +56,10 @@
             "id": 11,
             "name": "Brother",
             "path": "/songs/Brother.mp3"
+        }, {
+            "id": 12,
+            "name": "Outro",
+            "path": "/songs/Outro.mp3"
         }
     ]
 }
